@@ -1,0 +1,6 @@
+---
+- name: Install Extra Packages
+  package:
+    name: "{{ extrapkgs }}"
+    state: present
+

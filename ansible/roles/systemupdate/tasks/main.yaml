@@ -1,0 +1,7 @@
+---
+- name: Update all packages on system
+  package:
+    name: "*"
+    state: latest
+    update_cache: yes
+    

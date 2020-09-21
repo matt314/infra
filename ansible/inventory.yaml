@@ -1,0 +1,14 @@
+capnbells:
+  hosts:
+    localhost:
+  vars:
+    ansible_connection: local
+    extrapkgs:
+      - git
+      - ansible
+      - cowsay
+
+all:
+  vars:
+    localuser: piechota
+

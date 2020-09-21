@@ -1,0 +1,10 @@
+---
+- name: Cap and Bells initialization
+  hosts: capnbells
+  become: yes
+  become_method: sudo
+
+  roles:
+    - systemupdate
+    - extrapkgs
+
