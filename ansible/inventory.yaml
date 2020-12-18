@@ -8,6 +8,9 @@ capnbells:
       - ansible
       - cowsay
       - shotwell
+      - virt-manager
+      - nmap
+#      - https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.rpm
 
 all:
   vars:
