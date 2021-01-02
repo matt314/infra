@@ -1,0 +1,23 @@
+---
+- name: create Microsoft yum repo
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+    enabled: yes
+  tags:
+    - install
+    - vscode
+
+
+#sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+
+- name: Install VS Code
+  package:
+    name: code
+    state: present
+  tags:
+    - install
+    - vscode
