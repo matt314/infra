@@ -1,0 +1,10 @@
+---
+- name: install snapd packages
+  package:
+    name: snapd
+    state: present
+  register: snapd_install
+
+- name: restart system if snapd installed
+  reboot:
+  when: snapd_install.changed is true

@@ -1,0 +1,11 @@
+---
+- name: Install microk8s snap (takes awhile)
+  snap:
+    name: microk8s
+    classic: yes
+
+- name: Set up localuser
+  user:
+    name: "{{ localuser }}"
+    groups: microk8s
+
