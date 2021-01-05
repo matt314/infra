@@ -7,5 +7,6 @@
   roles:
     - systemupdate
     - extrapkgs
+    - snapd
     - vscode
 
