@@ -11,6 +11,7 @@ capnbells:
       - virt-manager
       - nmap
       - vagrant
+      - gnome-tweaks
 #      - snapd
 
 all:
