@@ -1,0 +1,27 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "fedora/33-cloud-base"
+  #config.vm.box = "generic/ubuntu2010"
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.cpus = 1
+    libvirt.memory = 4096
+  end
+
+  config.vm.network "forwarded_port", guest: 10443, host: 10443
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  #config.vm.network "public_network", bridge: "bridge-br0"
+
+  config.vm.provision :ansible do |ansible|
+    ansible.playbook = "microk8s.yaml"
+  end
+  # config.vm.provision "ansible", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+end

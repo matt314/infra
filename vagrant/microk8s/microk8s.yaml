@@ -1,0 +1,14 @@
+---
+- name: Microk8s VM
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  vars:
+    localuser: vagrant
+
+  roles:
+    - systemupdate
+    - snapd
+#    - microk8s
+

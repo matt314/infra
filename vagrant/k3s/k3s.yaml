@@ -1,0 +1,21 @@
+---
+- name: k3s VM
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  vars:
+    localuser: vagrant
+    extrapkgs:
+      - container-selinux
+      - selinux-policy-base
+
+  roles:
+    - systemupdate
+    - extrapkgs
+
+  tasks:
+    - name: Run k3s script
+      script:
+        cmd: ./get-k3s.sh
+
