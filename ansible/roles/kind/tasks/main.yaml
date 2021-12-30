@@ -1,0 +1,20 @@
+---
+- name: Create user Delegate setting
+  copy:
+    dest: "/etc/systemd/system/user@.service.d/delegate.conf"
+    mode: "0644"
+    content: |
+      [Service]
+      Delegate=yes
+    notify: daemon_reload
+
+- name: Download kind binary
+  get_url:
+    url: "{{ kind_url }}"
+    mode: "0755"
+    dest: "/usr/local/bin/kind"
+    owner: root
+    group: root
+  become: true
+
+- name: 
