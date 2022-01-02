@@ -1,6 +1,6 @@
 ---
-- name: Cap and Bells initialization
-  hosts: capnbells
+- name: Acropolis initialization
+  hosts: acropolis
   become: yes
   become_method: sudo
 
