@@ -16,4 +16,5 @@
   roles:
     - snapd
     - vscode
+    - capslock
 
