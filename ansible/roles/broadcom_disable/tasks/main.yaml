@@ -1,0 +1,11 @@
+---
+- name: create broadcom blacklist for modprobe
+  copy:
+    dest: /etc/modprobe.d/broadcom-disable.conf
+    owner: root
+    group: root
+    mode: "0644"
+    content: |
+      blacklist brcmsmac
+      blacklist brcmutil
+      blacklist brca
