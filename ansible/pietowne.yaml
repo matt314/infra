@@ -19,4 +19,11 @@
     - vscode
 #    - zoom
 
+- name: Empire initialization
+  hosts: empire
+  become: yes
+  become_method: sudo
 
+  roles:
+#    - cockpit
+#    - libvirt
