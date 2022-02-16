@@ -1,0 +1,6 @@
+{{- define "lib-lookup.value" -}}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ .Values.avalue }}
+{{- end }}
